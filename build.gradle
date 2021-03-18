@@ -8,6 +8,11 @@ group = 'turntabl.io'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '15'
 
+bootJar {
+	baseName = "SimbaReportingService"
+	version = '0.0.1'
+}
+
 repositories {
 	mavenCentral()
 }
