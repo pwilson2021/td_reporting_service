@@ -1,0 +1,17 @@
+language: java
+sudo: true
+jdk:
+  - openjdk15
+
+script: ./gradlew build --scan -s
+before_install: chmod +x gradlew
+
+jobs:
+  include:
+    - stage: test
+      script: ./gradlew test
+deploy:
+  provider: heroku
+  api_key: $HEROKU_API_KEY
+  app: simba-reporting-service
+  on: main
